@@ -9,13 +9,16 @@ html {
 }
 
 .page {
-  inline-size: 1200px;
-  block-size: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: 'Fira Sans Condensed', Arial, sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  block-size: 100%;
+  inline-size: 1200px;
 }
 
 h1,
@@ -35,4 +38,275 @@ fieldset {
 ul,
 ol {
   list-style: none;
+}
+
+.content {
+  display: flex;
+  gap: 30px;
+  inline-size: 1140px;
+  block-size: 534px;
+}
+
+.visually-hidden {
+  position: absolute;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0000);
+  inline-size: 1px;
+  block-size: 1px;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.title { /* по смотри в окно */
+  color: #FFF;
+  font-family: Oswald, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 75px;
+  font-style: normal;
+  line-height: 94%;
+  text-transform: uppercase;
+}
+
+.content__accent { /* по */
+  color: #545050;
+}
+
+.button {
+  border: 1px solid #FFF;
+  color: #FFF;
+  font-family: Fira Sans Condensed, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  font-style: normal;
+  line-height: normal;
+  text-align: center;
+  background-color: transparent;
+  min-inline-size: 194px;
+  min-block-size: 34px;
+}
+
+.button:active {
+  background-color: #545050;
+}
+
+.button:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.button:focus-visible {
+  outline: 1px solid #FFF;
+  outline-offset: 2px;
+}
+
+.result { /* блок "главное видео плюс форма ввода снизу" */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 16px;
+  inline-size: 711px;
+}
+
+.result__video-container { /* контейнер для главного видео */
+  position: relative;
+  block-size: 386px;
+  inline-size: 711px;
+}
+
+.result__video { /* главное видео */
+  border: none;
+  object-fit: cover;
+  object-position: center;
+  block-size: 100%;
+  inline-size: 100%;
+}
+
+.search-form { /* форма ввода снизу */
+  display: flex;
+  justify-content: space-between;
+  inline-size: 100%;
+}
+
+.search-form__fieldset { /* поля формы ввода "город" и "время суток" */
+  border: none;
+}
+
+.search-form__fieldset-title { /* заголовки "город" "время суток" */
+  margin-bottom: 5px;
+  color: #FFF;
+  font-family: Fira Sans Condensed, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
+  line-height: normal;
+}
+
+.search-form__textfield { /* санкт-петербург, например */
+  border: none;
+  border-top: 1px solid #FFF;
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid #FFF;
+  border-left: 1px solid transparent;
+  color: rgba(255, 255, 255, 0.70);
+  font-family: Fira Sans Condensed, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
+  line-height: normal;
+  background-color: transparent;
+  appearance: none;
+  min-inline-size: 225px;
+  min-block-size: 27px;
+}
+
+.search-form__textfield:active {
+  border: 1px solid #FFF;
+}
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__fieldset { /* поле ввода "время суток" */
+  inline-size: 212px;
+}
+
+.search-form__checkbox-list{ /* контейнер для 3 флажков и 3 слов время суток */
+  display: flex;
+  justify-content: space-between;
+}
+  
+.search-form__label { /* контейнер для псевдо-флажка и слова времени суток */
+  display: flex;
+  gap: 5px;
+  padding: 1px;
+  outline: 1px solid transparent;
+  cursor: pointer;
+}
+
+.search-form__label:hover .search-form__label-text {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.search-form__label:has(:focus-visible) {
+  padding: 1px;
+  outline: 1px solid #FFF;
+}
+
+.search-form__pseudo-checkbox { /* псевдо-флажки */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  border: 1px solid #FFF;
+  inline-size: 19px;
+  block-size: 19px;
+}
+
+input[type="checkbox"]:checked+span::before {
+  content: "";
+  position: absolute;
+  background-color: #FFF;
+  inline-size: 15px;
+  block-size: 15px;
+}
+
+.search-form__submit-button { /* кнопка "найти" */
+  align-self: flex-end;
+  block-size: 34px;
+}
+
+.more-button { /* кнопка "показать ещё" */
+  inline-size: 100%;
+}
+
+.more-button:focus-visible {
+  outline-offset: -3px;
+}
+
+/* template */
+
+.preloader-template { /* фон загрузки при обновлениии страницы */
+  position: absolute;
+}
+
+.content__card-link { /* ссылки в корточке "видео" */
+  display: block;
+  margin: 0 3px;
+  text-decoration: none;
+}
+
+.content__card-link_current {
+  background-color: #545050;
+}
+
+.content__video-card-description-container { /* текст карточек "видео" */
+  display: flex;
+  flex-direction: column;
+  justify-items: flex-start;
+  gap: 6px;
+  width: 100%;
+  margin-top: 3px; /* выравниваем обводку при навигации через клавиатуру */
+  padding: 3px;
+  color: #FFF;
+  font-style: normal;
+}
+
+.content__video-card-title { /* заголовок карточек "видео" */
+  font-family: Oswald, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 100%;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.content__video-card-description { /* описание карточек "видео" */
+  flex-wrap: wrap;
+  align-items: flex-start;
+  font-family: Fira Sans Condensed, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 16.2px;
+}
+
+.content__details { /* блок "по смотри в окно и template" */
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  inline-size: 399px;
+}
+
+.content__list { /* список карточек справа со скроллом */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 3px 0; /* для отображения границ обводки первого и последнего элемента при навигации с клавиатуры */
+  overflow: hidden auto;
+  inline-size: 399px;
+  block-size: 298px;
+}
+
+.content__list::-webkit-scrollbar { /* убираем полосу прокрутки scroll */
+  inline-size: 0;
+}
+
+.content__list-item:active { /* пункт списка карточек справа */
+  background-color: #545050;
+}
+
+.content__video-card { /* контейнер для заголовка, описания города и картинки города */
+  display: flex;
+}
+
+.content__video-card-thumbnail { /* картинки справа */
+  inline-size: 100%;
+  block-size: 103px;
+  padding: 3px 0; /* чтобы была рамка при нажатии */
 }
