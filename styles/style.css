@@ -44,7 +44,6 @@ ol {
   display: flex;
   gap: 30px;
   inline-size: 1140px;
-  block-size: 534px;
 }
 
 .visually-hidden {
@@ -77,7 +76,7 @@ ol {
 .button {
   border: 1px solid #FFF;
   color: #FFF;
-  font-family: Fira Sans Condensed, Arial, sans-serif;
+  font-family: inherit;
   font-weight: 700;
   font-size: 18px;
   font-style: normal;
@@ -170,13 +169,10 @@ ol {
   outline: none;
 }
 
-.search-form__fieldset { /* поле ввода "время суток" */
-  inline-size: 212px;
-}
-
 .search-form__checkbox-list{ /* контейнер для 3 флажков и 3 слов время суток */
   display: flex;
   justify-content: space-between;
+  gap: 15px;
 }
   
 .search-form__label { /* контейнер для псевдо-флажка и слова времени суток */
@@ -218,7 +214,6 @@ input[type="checkbox"]:checked+span::before {
 
 .search-form__submit-button { /* кнопка "найти" */
   align-self: flex-end;
-  block-size: 34px;
 }
 
 .more-button { /* кнопка "показать ещё" */
@@ -284,17 +279,10 @@ input[type="checkbox"]:checked+span::before {
 
 .content__list { /* список карточек справа со скроллом */
   position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  padding: 3px 0; /* для отображения границ обводки первого и последнего элемента при навигации с клавиатуры */
+  padding-top: 3px; /* для отображения границ обводки первого элемента при навигации с клавиатуры */
   overflow: hidden auto;
-  inline-size: 399px;
+  inline-size: 418px;
   block-size: 298px;
-}
-
-.content__list::-webkit-scrollbar { /* убираем полосу прокрутки scroll */
-  inline-size: 0;
 }
 
 .content__list-item:active { /* пункт списка карточек справа */
@@ -303,10 +291,15 @@ input[type="checkbox"]:checked+span::before {
 
 .content__video-card { /* контейнер для заголовка, описания города и картинки города */
   display: flex;
+  margin-bottom: 30px;
+}
+
+.content__video-card:hover {
+  text-decoration: underline;
+  text-decoration-color: #FFF;
 }
 
 .content__video-card-thumbnail { /* картинки справа */
   inline-size: 100%;
   block-size: 103px;
-  padding: 3px 0; /* чтобы была рамка при нажатии */
 }
